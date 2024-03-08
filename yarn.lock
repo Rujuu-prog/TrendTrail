@@ -55,6 +55,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@auth/prisma-adapter@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@auth/prisma-adapter@npm:1.5.0"
+  dependencies:
+    "@auth/core": "npm:0.28.0"
+  peerDependencies:
+    "@prisma/client": ">=2.26.0 || >=3 || >=4 || >=5"
+  checksum: 9b49833fd3555ebc6bb5d031f2c422aa4c544753ac8b906101d5327875850ed6e1a6b82dec96740df349a74315154e799e4b18d04b6567d051bd309a2fe4f483
+  languageName: node
+  linkType: hard
+
 "@aw-web-design/x-default-browser@npm:1.4.126":
   version: 1.4.126
   resolution: "@aw-web-design/x-default-browser@npm:1.4.126"
@@ -11913,6 +11924,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "mantine-next-template@workspace:."
   dependencies:
+    "@auth/prisma-adapter": "npm:^1.5.0"
     "@babel/core": "npm:^7.23.2"
     "@mantine/core": "npm:7.6.1"
     "@mantine/hooks": "npm:7.6.1"

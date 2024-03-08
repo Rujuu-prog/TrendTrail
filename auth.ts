@@ -1,25 +1,15 @@
 import NextAuth from 'next-auth';
+import { PrismaAdapter } from '@auth/prisma-adapter';
 import { authConfig } from './auth.config';
 import Credentials from 'next-auth/providers/credentials';
 import { z } from 'zod';
 import bcrypt from 'bcrypt';
 import prisma from './app/lib/prisma';
+import { getUserByEmail } from './db/user';
 
-async function getUser(email: string) {
-    try {
-      const user = await prisma.user.findUnique({
-        where: {
-            email: email,
-        }
-      });
-      return user;
-    } catch (error) {
-      console.error('Failed to fetch user:', error);
-      throw new Error('Failed to fetch user.');
-    }
-  }
- 
 export const { auth, signIn, signOut } = NextAuth({
+  adapter: PrismaAdapter(prisma),
+  session: { strategy: 'jwt' },
   ...authConfig,
   providers: [
     Credentials({
@@ -30,7 +20,7 @@ export const { auth, signIn, signOut } = NextAuth({
 
             if(parsedCredentials.success){
                 const {email, password} = parsedCredentials.data;
-                const user = await getUser(email);
+                const user = await getUserByEmail(email);
                 if(!user)return null;
                 const passwordsMatch = await bcrypt.compare(password, user.hashedpassword);
                 if(passwordsMatch) return user;
