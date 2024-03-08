@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
 import { Metadata } from 'next';
-import {useSession} from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 
-export const matadata: Metadata = {
+export const metadata: Metadata = {
   title: 'Dashboard',
 };
 
