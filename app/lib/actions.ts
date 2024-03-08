@@ -30,3 +30,28 @@ export async function authenticate(
     }
   }
 
+export async function signUp(
+    prevState: string | undefined,
+    formData: FormData,
+){
+  try {
+    const name = formData.get('name') as string;
+    const email = formData.get('email') as string;
+    const password = formData.get('password') as string;
+    const result = await createUser(name, email, password);
+    console.log(result)
+    if(!result.isSuccess){
+      return result.error?.message;
+    }
+  } catch(error) {
+    console.log(error);
+    return 'Failed to sign up.';
+    // throw error;
+  }
+    // await signIn('credentials', {email, password,});
+    // redirect('http://localhost:3000/dashboard')
+}
+
+export async function signOutServerAction() {
+  await signOut();
+}

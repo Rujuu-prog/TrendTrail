@@ -7,6 +7,7 @@ interface MenuItem {
   shortcut?: string;
   label?: string;
   divider?: boolean;
+  formAction?: ()=>void;
 }
 
 interface DropdownMenuItemsProps {
@@ -33,6 +34,7 @@ export function DropdownMenuItems({ items }: DropdownMenuItemsProps) {
                 {item.shortcut}
               </Text>
             )}
+            onClick={item.formAction}
           >
             {item.text}
           </MantineMenu.Item>

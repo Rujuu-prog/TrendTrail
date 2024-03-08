@@ -12,6 +12,7 @@ import {
   } from '@mantine/core';
   import classes from './page.module.css';
 import Link from 'next/link';
+import { SignUpForm } from '@/components/Form/SignUpForm/SignUpForm';
   
   export default function Page() {
     return (
@@ -28,14 +29,7 @@ import Link from 'next/link';
           </Anchor>
         </Text>
   
-        <Paper withBorder shadow="md" p={30} mt={30} radius="md">
-          <TextInput label="User name" placeholder="trend tail" required />
-          <TextInput label="Email" placeholder="you@trendtail.shop" required />
-          <PasswordInput label="Password" placeholder="Your password" required mt="md" />
-          <Button fullWidth mt="xl" color='violet'>
-            Sign up
-          </Button>
-        </Paper>
+        <SignUpForm />
       </Container>
     );
   }
