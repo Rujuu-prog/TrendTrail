@@ -1,4 +1,6 @@
 import prisma from "@/app/lib/prisma";
+import bcrypt from "bcrypt";
+import { handleError } from "@/app/lib/utils";
 
 export async function getUserByEmail(email: string) {
     try {
@@ -10,6 +12,8 @@ export async function getUserByEmail(email: string) {
       return user;
     } catch (error) {
       console.error('Failed to fetch user:', error);
-      throw new Error('Failed to fetch user.');
+      handleError(error);
+    }
+  }
     }
   }
