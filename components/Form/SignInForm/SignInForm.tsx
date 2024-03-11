@@ -8,9 +8,11 @@ import {
     Paper,
     Group,
     Button,
+    Space,
   } from '@mantine/core';
 import { useFormState, useFormStatus } from 'react-dom';
 import { authenticate } from '@/app/lib/actions';
+import { ErrorAlert } from '@/components/Alert/ErrorAlert/ErrorAlert';
 
 export function SignInForm(){
     const [errorMessage, dispatch] = useFormState(authenticate, undefined);
@@ -26,17 +28,8 @@ export function SignInForm(){
                     </Anchor>
                 </Group>
                 <LoginButton />
-                <div
-                    className="flex h-8 items-end space-x-1"
-                    aria-live="polite"
-                    aria-atomic="true"
-                    >
-                    {errorMessage && (
-                        <>
-                            <p className="text-sm text-red-500">{errorMessage}</p>
-                        </>
-                    )}
-                </div>
+                <Space h="sm" />
+                {errorMessage && <ErrorAlert errorMsg={errorMessage} />}
             </Paper>
         </form>
     )

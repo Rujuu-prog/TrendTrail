@@ -5,10 +5,11 @@ import {
     PasswordInput,
     Paper,
     Button,
+    Space,
   } from '@mantine/core';
 import { useFormState, useFormStatus } from 'react-dom';
 import { signUp } from '@/app/lib/actions';
-import { redirect } from 'next/navigation';
+import { ErrorAlert } from '@/components/Alert/ErrorAlert/ErrorAlert';
 
 export function SignUpForm(){
     const [errorMessage, dispatch] = useFormState(signUp, undefined);
@@ -19,17 +20,8 @@ export function SignUpForm(){
                 <TextInput label="Email" placeholder="you@trendtail.shop" name="email" required />
                 <PasswordInput label="Password" placeholder="Your password" name="password" required mt="md" />
                 <SignUpButton />
-                <div
-                    className="flex h-8 items-end space-x-1"
-                    aria-live="polite"
-                    aria-atomic="true"
-                    >
-                    {errorMessage && (
-                        <>
-                            <p className="text-sm text-red-500">{errorMessage}</p>
-                        </>
-                    )}
-                </div>
+                <Space h="sm" />
+                {errorMessage && <ErrorAlert errorMsg={errorMessage} />}
             </Paper>
         </form>
     )
