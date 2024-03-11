@@ -24,7 +24,7 @@ export function CardOnlyImg({ image, title, category }: CardOnlyImgProps){
                 {title}
                 </Title>
             </div>
-            <Button variant="white" color="dark">
+            <Button variant="filled" color="violet">
                 Read more...
             </Button>
         </Paper>
