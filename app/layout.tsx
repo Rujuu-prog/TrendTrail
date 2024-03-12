@@ -5,6 +5,7 @@ import { theme } from '../theme';
 import { Header } from '@/components/Header/Header';
 import { SessionProvider } from 'next-auth/react';
 import { auth } from '@/auth';
+import '@mantine/carousel/styles.css';
 
 export const metadata = {
   title: 'Mantine Next.js template',

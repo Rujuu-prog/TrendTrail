@@ -1,0 +1,58 @@
+/* Table設定 */
+.table {
+  td,
+  th {
+    line-height: 24px;
+  }
+  tr:not(:first-child):hover {
+    background-color: rgba(149, 0, 255, 0.042);
+  }
+}
+
+.tbody {
+  border-bottom: 0;
+}
+
+.rankCell {
+  position: relative;
+  padding-left: 25px;
+}
+.firstRankRow {
+  background: linear-gradient(30deg, #7950f2c7, #4c6ef594);
+  color: white;
+  position: relative;
+  border-radius: 4px;
+}
+
+/* 1位の要素の背景色 */
+.firstRankRow::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: inherit;
+  filter: blur(8px);
+  border-radius: 4px;
+}
+
+.firstRankRow td:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.firstRankRow td:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* 1位につけるアイコン設定 */
+.rankIcon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-55%);
+  color: rgb(255, 234, 0);
+}

@@ -1603,6 +1603,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.8.7":
+  version: 7.24.0
+  resolution: "@babel/runtime@npm:7.24.0"
+  dependencies:
+    regenerator-runtime: "npm:^0.14.0"
+  checksum: 3495eed727bf4a4f84c35bb51ab53317ae38f4bbc3b1d0a8303751f9dfa0ce6f5fb2afced72b76c3dd0d8bb2ccb84787559a4dee9886291a36b26f02f0f759b4
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.22.15, @babel/template@npm:^7.22.5, @babel/template@npm:^7.3.3":
   version: 7.22.15
   resolution: "@babel/template@npm:7.22.15"
@@ -2381,7 +2390,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/core@npm:7.6.1":
+"@mantine/carousel@npm:^7.6.1":
+  version: 7.6.1
+  resolution: "@mantine/carousel@npm:7.6.1"
+  peerDependencies:
+    "@mantine/core": 7.6.1
+    "@mantine/hooks": 7.6.1
+    embla-carousel-react: ">=7.0.0"
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 342817d60f1b28057416b763d0e026c008be0834ec785338ada3a5098ae2e372bbf4c2c489f96a98ceb8f8a4d6fd035377cdd237cdbc8d93f3e3549ba3adc278
+  languageName: node
+  linkType: hard
+
+"@mantine/charts@npm:^7.6.1":
+  version: 7.6.1
+  resolution: "@mantine/charts@npm:7.6.1"
+  peerDependencies:
+    "@mantine/core": 7.6.1
+    "@mantine/hooks": 7.6.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    recharts: ^2.10.3
+  checksum: 70e264bf6aa0347bca23229223ede3db3db908719cdb653e40ea63ed810070f163397077b43f2c8b00c45c9045613bafb1e761492de442f46b37cd78d5a7a709
+  languageName: node
+  linkType: hard
+
+"@mantine/core@npm:^7.6.1":
   version: 7.6.1
   resolution: "@mantine/core@npm:7.6.1"
   dependencies:
@@ -2399,12 +2434,74 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mantine/hooks@npm:7.6.1":
+"@mantine/dropzone@npm:^7.6.1":
+  version: 7.6.1
+  resolution: "@mantine/dropzone@npm:7.6.1"
+  dependencies:
+    react-dropzone-esm: "npm:15.0.1"
+  peerDependencies:
+    "@mantine/core": 7.6.1
+    "@mantine/hooks": 7.6.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: c4e146689ab2a92da5478c8c242a10860672becf8c997075399fb624a24b66cf04eba5d738a1908a08b699ca6bb10d91d0a2fee68fa7a2e84f16be13c6d51ec6
+  languageName: node
+  linkType: hard
+
+"@mantine/form@npm:^7.6.1":
+  version: 7.6.1
+  resolution: "@mantine/form@npm:7.6.1"
+  dependencies:
+    fast-deep-equal: "npm:^3.1.3"
+    klona: "npm:^2.0.6"
+  peerDependencies:
+    react: ^18.2.0
+  checksum: 57c3891f8be331059cc4a040c5d83a655164761c8f787fc2a73e0d281ddc881bb2570eb1ddada67d8b3b43c487006c1ceab60e0ff179f544bb4a1b452c9f8a72
+  languageName: node
+  linkType: hard
+
+"@mantine/hooks@npm:^7.6.1":
   version: 7.6.1
   resolution: "@mantine/hooks@npm:7.6.1"
   peerDependencies:
     react: ^18.2.0
   checksum: 89f9de0b26e7bddd5969ebf1e1c34072729c5734181d58dc954076f25541a4582a9b9ce68d25d96e1c96523f5cd25df7039d4ac6228894bcbcf0fefe50482628
+  languageName: node
+  linkType: hard
+
+"@mantine/modals@npm:^7.6.1":
+  version: 7.6.1
+  resolution: "@mantine/modals@npm:7.6.1"
+  peerDependencies:
+    "@mantine/core": 7.6.1
+    "@mantine/hooks": 7.6.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 048ca9f120b2b484ce338a8d58b9f1a963f653b68efed65f7db6659a09d6d26e5b7a28f1cf9906a7ed313cde032ce52fd2be9b11fd1b34e0a30442602324dcb9
+  languageName: node
+  linkType: hard
+
+"@mantine/notifications@npm:^7.6.1":
+  version: 7.6.1
+  resolution: "@mantine/notifications@npm:7.6.1"
+  dependencies:
+    "@mantine/store": "npm:7.6.1"
+    react-transition-group: "npm:4.4.5"
+  peerDependencies:
+    "@mantine/core": 7.6.1
+    "@mantine/hooks": 7.6.1
+    react: ^18.2.0
+    react-dom: ^18.2.0
+  checksum: 666d1668f98f5ea15f768266656130df901e86f529aeee1b191da9986c6eb773dac1b96ee1a1612a257a7513acd3021939f2effcc66c19b02b080f0f744284c3
+  languageName: node
+  linkType: hard
+
+"@mantine/store@npm:7.6.1":
+  version: 7.6.1
+  resolution: "@mantine/store@npm:7.6.1"
+  peerDependencies:
+    react: ^18.2.0
+  checksum: 3c73d1e1bb1ce087c17219db7c84aed356f6f7cdbf0ea1b88e3be6d9be85906a8cec1a5209e9e47fde4f92846f5bc3d93a8f0209edcdbd7eadda0c42643dc086
   languageName: node
   linkType: hard
 
@@ -5023,6 +5120,75 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/d3-array@npm:^3.0.3":
+  version: 3.2.1
+  resolution: "@types/d3-array@npm:3.2.1"
+  checksum: 38bf2c778451f4b79ec81a2288cb4312fe3d6449ecdf562970cc339b60f280f31c93a024c7ff512607795e79d3beb0cbda123bb07010167bce32927f71364bca
+  languageName: node
+  linkType: hard
+
+"@types/d3-color@npm:*":
+  version: 3.1.3
+  resolution: "@types/d3-color@npm:3.1.3"
+  checksum: 65eb0487de606eb5ad81735a9a5b3142d30bc5ea801ed9b14b77cb14c9b909f718c059f13af341264ee189acf171508053342142bdf99338667cea26a2d8d6ae
+  languageName: node
+  linkType: hard
+
+"@types/d3-ease@npm:^3.0.0":
+  version: 3.0.2
+  resolution: "@types/d3-ease@npm:3.0.2"
+  checksum: aff5a1e572a937ee9bff6465225d7ba27d5e0c976bd9eacdac2e6f10700a7cb0c9ea2597aff6b43a6ed850a3210030870238894a77ec73e309b4a9d0333f099c
+  languageName: node
+  linkType: hard
+
+"@types/d3-interpolate@npm:^3.0.1":
+  version: 3.0.4
+  resolution: "@types/d3-interpolate@npm:3.0.4"
+  dependencies:
+    "@types/d3-color": "npm:*"
+  checksum: 066ebb8da570b518dd332df6b12ae3b1eaa0a7f4f0c702e3c57f812cf529cc3500ec2aac8dc094f31897790346c6b1ebd8cd7a077176727f4860c2b181a65ca4
+  languageName: node
+  linkType: hard
+
+"@types/d3-path@npm:*":
+  version: 3.1.0
+  resolution: "@types/d3-path@npm:3.1.0"
+  checksum: 85e8b3aa968a60a5b33198ade06ae7ffedcf9a22d86f24859ff58e014b053ccb7141ec163b78d547bc8215bb12bb54171c666057ab6156912814005b686afb31
+  languageName: node
+  linkType: hard
+
+"@types/d3-scale@npm:^4.0.2":
+  version: 4.0.8
+  resolution: "@types/d3-scale@npm:4.0.8"
+  dependencies:
+    "@types/d3-time": "npm:*"
+  checksum: 57de90e4016f640b83cb960b7e3a0ab3ed02e720898840ddc5105264ffcfea73336161442fdc91895377c2d2f91904d637282f16852b8535b77e15a761c8e99e
+  languageName: node
+  linkType: hard
+
+"@types/d3-shape@npm:^3.1.0":
+  version: 3.1.6
+  resolution: "@types/d3-shape@npm:3.1.6"
+  dependencies:
+    "@types/d3-path": "npm:*"
+  checksum: 0625715925d3c7ed3d44ce998b42c993f063c31605b6e4a8046c4be0fe724e2d214fc83e86d04f429a30a6e1f439053e92b0d9e59e1180c3a5327b4a6e79fa0a
+  languageName: node
+  linkType: hard
+
+"@types/d3-time@npm:*, @types/d3-time@npm:^3.0.0":
+  version: 3.0.3
+  resolution: "@types/d3-time@npm:3.0.3"
+  checksum: 245a8aadca504df27edf730de502e47a68f16ae795c86b5ca35e7afa91c133aa9ef4d08778f8cf1ed2be732f89a4105ba4b437ce2afbdfd17d3d937b6ba5f568
+  languageName: node
+  linkType: hard
+
+"@types/d3-timer@npm:^3.0.0":
+  version: 3.0.2
+  resolution: "@types/d3-timer@npm:3.0.2"
+  checksum: c644dd9571fcc62b1aa12c03bcad40571553020feeb5811f1d8a937ac1e65b8a04b759b4873aef610e28b8714ac71c9885a4d6c127a048d95118f7e5b506d9e1
+  languageName: node
+  linkType: hard
+
 "@types/detect-port@npm:^1.3.0":
   version: 1.3.3
   resolution: "@types/detect-port@npm:1.3.3"
@@ -7269,7 +7435,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:2.1.0":
+"clsx@npm:2.1.0, clsx@npm:^2.0.0":
   version: 2.1.0
   resolution: "clsx@npm:2.1.0"
   checksum: c09c00ad14f638366ca814097e6cab533dfa1972a358da5b557be487168acbb25b4c1395e89ffa842a8a61ba87a462d2b4885bc9d4f8410b598f3cb339599cdb
@@ -7763,6 +7929,99 @@ __metadata:
   languageName: node
   linkType: hard
 
+"d3-array@npm:2 - 3, d3-array@npm:2.10.0 - 3, d3-array@npm:^3.1.6":
+  version: 3.2.4
+  resolution: "d3-array@npm:3.2.4"
+  dependencies:
+    internmap: "npm:1 - 2"
+  checksum: 08b95e91130f98c1375db0e0af718f4371ccacef7d5d257727fe74f79a24383e79aba280b9ffae655483ffbbad4fd1dec4ade0119d88c4749f388641c8bf8c50
+  languageName: node
+  linkType: hard
+
+"d3-color@npm:1 - 3":
+  version: 3.1.0
+  resolution: "d3-color@npm:3.1.0"
+  checksum: a4e20e1115fa696fce041fbe13fbc80dc4c19150fa72027a7c128ade980bc0eeeba4bcf28c9e21f0bce0e0dbfe7ca5869ef67746541dcfda053e4802ad19783c
+  languageName: node
+  linkType: hard
+
+"d3-ease@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "d3-ease@npm:3.0.1"
+  checksum: fec8ef826c0cc35cda3092c6841e07672868b1839fcaf556e19266a3a37e6bc7977d8298c0fcb9885e7799bfdcef7db1baaba9cd4dcf4bc5e952cf78574a88b0
+  languageName: node
+  linkType: hard
+
+"d3-format@npm:1 - 3":
+  version: 3.1.0
+  resolution: "d3-format@npm:3.1.0"
+  checksum: 049f5c0871ebce9859fc5e2f07f336b3c5bfff52a2540e0bac7e703fce567cd9346f4ad1079dd18d6f1e0eaa0599941c1810898926f10ac21a31fd0a34b4aa75
+  languageName: node
+  linkType: hard
+
+"d3-interpolate@npm:1.2.0 - 3, d3-interpolate@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "d3-interpolate@npm:3.0.1"
+  dependencies:
+    d3-color: "npm:1 - 3"
+  checksum: 19f4b4daa8d733906671afff7767c19488f51a43d251f8b7f484d5d3cfc36c663f0a66c38fe91eee30f40327443d799be17169f55a293a3ba949e84e57a33e6a
+  languageName: node
+  linkType: hard
+
+"d3-path@npm:^3.1.0":
+  version: 3.1.0
+  resolution: "d3-path@npm:3.1.0"
+  checksum: dc1d58ec87fa8319bd240cf7689995111a124b141428354e9637aa83059eb12e681f77187e0ada5dedfce346f7e3d1f903467ceb41b379bfd01cd8e31721f5da
+  languageName: node
+  linkType: hard
+
+"d3-scale@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "d3-scale@npm:4.0.2"
+  dependencies:
+    d3-array: "npm:2.10.0 - 3"
+    d3-format: "npm:1 - 3"
+    d3-interpolate: "npm:1.2.0 - 3"
+    d3-time: "npm:2.1.1 - 3"
+    d3-time-format: "npm:2 - 4"
+  checksum: 65d9ad8c2641aec30ed5673a7410feb187a224d6ca8d1a520d68a7d6eac9d04caedbff4713d1e8545be33eb7fec5739983a7ab1d22d4e5ad35368c6729d362f1
+  languageName: node
+  linkType: hard
+
+"d3-shape@npm:^3.1.0":
+  version: 3.2.0
+  resolution: "d3-shape@npm:3.2.0"
+  dependencies:
+    d3-path: "npm:^3.1.0"
+  checksum: f1c9d1f09926daaf6f6193ae3b4c4b5521e81da7d8902d24b38694517c7f527ce3c9a77a9d3a5722ad1e3ff355860b014557b450023d66a944eabf8cfde37132
+  languageName: node
+  linkType: hard
+
+"d3-time-format@npm:2 - 4":
+  version: 4.1.0
+  resolution: "d3-time-format@npm:4.1.0"
+  dependencies:
+    d3-time: "npm:1 - 3"
+  checksum: 735e00fb25a7fd5d418fac350018713ae394eefddb0d745fab12bbff0517f9cdb5f807c7bbe87bb6eeb06249662f8ea84fec075f7d0cd68609735b2ceb29d206
+  languageName: node
+  linkType: hard
+
+"d3-time@npm:1 - 3, d3-time@npm:2.1.1 - 3, d3-time@npm:^3.0.0":
+  version: 3.1.0
+  resolution: "d3-time@npm:3.1.0"
+  dependencies:
+    d3-array: "npm:2 - 3"
+  checksum: a984f77e1aaeaa182679b46fbf57eceb6ebdb5f67d7578d6f68ef933f8eeb63737c0949991618a8d29472dbf43736c7d7f17c452b2770f8c1271191cba724ca1
+  languageName: node
+  linkType: hard
+
+"d3-timer@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "d3-timer@npm:3.0.1"
+  checksum: d4c63cb4bb5461d7038aac561b097cd1c5673969b27cbdd0e87fa48d9300a538b9e6f39b4a7f0e3592ef4f963d858c8a9f0e92754db73116770856f2fc04561a
+  languageName: node
+  linkType: hard
+
 "damerau-levenshtein@npm:^1.0.8":
   version: 1.0.8
   resolution: "damerau-levenshtein@npm:1.0.8"
@@ -7832,6 +8091,13 @@ __metadata:
   version: 5.0.1
   resolution: "decamelize@npm:5.0.1"
   checksum: 3da71022bc1e85487810fa0833138effb599fa331ca21e179650e93a765d0c4dabeb1ecdd6ad1474fa0bacd2457953c63ea335afb6e53b35f2b4bf779514e2a3
+  languageName: node
+  linkType: hard
+
+"decimal.js-light@npm:^2.4.1":
+  version: 2.5.1
+  resolution: "decimal.js-light@npm:2.5.1"
+  checksum: 4fd33f535aac9e5bd832796831b65d9ec7914ad129c7437b3ab991b0c2eaaa5a57e654e6174c4a17f1b3895ea366f0c1ab4955cdcdf7cfdcf3ad5a58b456c020
   languageName: node
   linkType: hard
 
@@ -8128,6 +8394,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dom-helpers@npm:^5.0.1":
+  version: 5.2.1
+  resolution: "dom-helpers@npm:5.2.1"
+  dependencies:
+    "@babel/runtime": "npm:^7.8.7"
+    csstype: "npm:^3.0.2"
+  checksum: f735074d66dd759b36b158fa26e9d00c9388ee0e8c9b16af941c38f014a37fc80782de83afefd621681b19ac0501034b4f1c4a3bff5caa1b8667f0212b5e124c
+  languageName: node
+  linkType: hard
+
 "dom-serializer@npm:^1.0.1":
   version: 1.4.1
   resolution: "dom-serializer@npm:1.4.1"
@@ -8269,6 +8545,34 @@ __metadata:
     minimalistic-assert: "npm:^1.0.1"
     minimalistic-crypto-utils: "npm:^1.0.1"
   checksum: 5f361270292c3b27cf0843e84526d11dec31652f03c2763c6c2b8178548175ff5eba95341dd62baff92b2265d1af076526915d8af6cc9cb7559c44a62f8ca6e2
+  languageName: node
+  linkType: hard
+
+"embla-carousel-react@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "embla-carousel-react@npm:8.0.0"
+  dependencies:
+    embla-carousel: "npm:8.0.0"
+    embla-carousel-reactive-utils: "npm:8.0.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.1 || ^18.0.0
+  checksum: 43d1f551be6119ba62f29fc281b5f89fabfc731fa7a8a008cb5520639be2775377580ad218c23171877f5812167b2a3bb72fac82918ad78b40ebf6f9214dfb4a
+  languageName: node
+  linkType: hard
+
+"embla-carousel-reactive-utils@npm:8.0.0":
+  version: 8.0.0
+  resolution: "embla-carousel-reactive-utils@npm:8.0.0"
+  peerDependencies:
+    embla-carousel: 8.0.0
+  checksum: d88fb25a59be6bbbb11a9b012bdc42bc1570ae82fd363bda0224cc3131852d469855bc9068bd5aa85e4c8546311de2dd1eae43ea0556dd1443d9b12ff138034c
+  languageName: node
+  linkType: hard
+
+"embla-carousel@npm:8.0.0":
+  version: 8.0.0
+  resolution: "embla-carousel@npm:8.0.0"
+  checksum: 51634c07816a5eef142b6bdfa1104da8232015de3260ff7c4b21a952abeac4035d2d02ea87bb5cec06290ec4429e606543e898b50aa9ccf6e636e74baf2951a6
   languageName: node
   linkType: hard
 
@@ -9036,6 +9340,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eventemitter3@npm:^4.0.1":
+  version: 4.0.7
+  resolution: "eventemitter3@npm:4.0.7"
+  checksum: 5f6d97cbcbac47be798e6355e3a7639a84ee1f7d9b199a07017f1d2f1e2fe236004d14fa5dfaeba661f94ea57805385e326236a6debbc7145c8877fbc0297c6b
+  languageName: node
+  linkType: hard
+
 "events@npm:^3.2.0, events@npm:^3.3.0":
   version: 3.3.0
   resolution: "events@npm:3.3.0"
@@ -9162,6 +9473,13 @@ __metadata:
   version: 3.1.3
   resolution: "fast-deep-equal@npm:3.1.3"
   checksum: 40dedc862eb8992c54579c66d914635afbec43350afbbe991235fdcb4e3a8d5af1b23ae7e79bef7d4882d0ecee06c3197488026998fb19f72dc95acff1d1b1d0
+  languageName: node
+  linkType: hard
+
+"fast-equals@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "fast-equals@npm:5.0.1"
+  checksum: d7077b8b681036c2840ed9860a3048e44fc268fad2b525b8f25b43458be0c8ad976152eb4b475de9617170423c5b802121ebb61ed6641c3ac035fadaf805c8c0
   languageName: node
   linkType: hard
 
@@ -10380,6 +10698,13 @@ __metadata:
     has: "npm:^1.0.3"
     side-channel: "npm:^1.0.4"
   checksum: 66d8a66b4b5310c042e8ad00ce895dc55cb25165a3a7da0d7862ca18d69d3b1ba86511b4bf3baf4273d744d3f6e9154574af45189ef11135a444945309e39e4a
+  languageName: node
+  linkType: hard
+
+"internmap@npm:1 - 2":
+  version: 2.0.3
+  resolution: "internmap@npm:2.0.3"
+  checksum: 8cedd57f07bbc22501516fbfc70447f0c6812871d471096fad9ea603516eacc2137b633633daf432c029712df0baefd793686388ddf5737e3ea15074b877f7ed
   languageName: node
   linkType: hard
 
@@ -11631,7 +11956,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"klona@npm:^2.0.4":
+"klona@npm:^2.0.4, klona@npm:^2.0.6":
   version: 2.0.6
   resolution: "klona@npm:2.0.6"
   checksum: 94eed2c6c2ce99f409df9186a96340558897b3e62a85afdc1ee39103954d2ebe1c1c4e9fe2b0952771771fa96d70055ede8b27962a7021406374fdb695fd4d01
@@ -11926,8 +12251,14 @@ __metadata:
   dependencies:
     "@auth/prisma-adapter": "npm:^1.5.0"
     "@babel/core": "npm:^7.23.2"
-    "@mantine/core": "npm:7.6.1"
-    "@mantine/hooks": "npm:7.6.1"
+    "@mantine/carousel": "npm:^7.6.1"
+    "@mantine/charts": "npm:^7.6.1"
+    "@mantine/core": "npm:^7.6.1"
+    "@mantine/dropzone": "npm:^7.6.1"
+    "@mantine/form": "npm:^7.6.1"
+    "@mantine/hooks": "npm:^7.6.1"
+    "@mantine/modals": "npm:^7.6.1"
+    "@mantine/notifications": "npm:^7.6.1"
     "@mantinex/mantine-logo": "npm:^1.0.1"
     "@next/bundle-analyzer": "npm:^14.0.1"
     "@next/eslint-plugin-next": "npm:^14.0.1"
@@ -11953,6 +12284,7 @@ __metadata:
     "@vercel/postgres": "npm:^0.7.2"
     babel-loader: "npm:^9.1.3"
     bcrypt: "npm:^5.1.1"
+    embla-carousel-react: "npm:^8.0.0"
     eslint: "npm:^8.53.0"
     eslint-config-airbnb: "npm:19.0.4"
     eslint-config-airbnb-typescript: "npm:^17.1.0"
@@ -11974,6 +12306,8 @@ __metadata:
     prisma: "npm:^5.10.2"
     react: "npm:18.2.0"
     react-dom: "npm:^18.2.0"
+    react-icons: "npm:^5.0.1"
+    recharts: "npm:2"
     storybook: "npm:^7.5.2"
     storybook-dark-mode: "npm:^3.0.1"
     stylelint: "npm:^15.11.0"
@@ -13694,7 +14028,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -13964,6 +14298,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-dropzone-esm@npm:15.0.1":
+  version: 15.0.1
+  resolution: "react-dropzone-esm@npm:15.0.1"
+  dependencies:
+    prop-types: "npm:^15.8.1"
+  peerDependencies:
+    react: ">= 16.8 || 18.0.0"
+  checksum: 4bd7054a78a9d8b98d13f0abfbdec334e647c681ccb62c5c38fce72e1bace4cdb7d5eb22675ab2ce63f6cca11ec40c0e2081a28a725a38f331cf930abb170e7d
+  languageName: node
+  linkType: hard
+
 "react-element-to-jsx-string@npm:^15.0.0":
   version: 15.0.0
   resolution: "react-element-to-jsx-string@npm:15.0.0"
@@ -13975,6 +14320,15 @@ __metadata:
     react: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
     react-dom: ^0.14.8 || ^15.0.1 || ^16.0.0 || ^17.0.1 || ^18.0.0
   checksum: 0d60a0ea758529c32a706d0c69d70b69fb94de3c46442fffdee34f08f51ffceddbb5395b41dfd1565895653e9f60f98ca525835be9d5db1f16d6b22be12f4cd4
+  languageName: node
+  linkType: hard
+
+"react-icons@npm:^5.0.1":
+  version: 5.0.1
+  resolution: "react-icons@npm:5.0.1"
+  peerDependencies:
+    react: "*"
+  checksum: 717022d93a3b2b30082f86fbb3c725a94a603b3fa1c611533439cc886f691a13b1833c30446d257a177667779239eac57411fa7516d8a4787bd735e965c9f63d
   languageName: node
   linkType: hard
 
@@ -13994,7 +14348,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^16.13.1":
+"react-is@npm:^16.10.2, react-is@npm:^16.13.1":
   version: 16.13.1
   resolution: "react-is@npm:16.13.1"
   checksum: 33977da7a5f1a287936a0c85639fec6ca74f4f15ef1e59a6bc20338fc73dc69555381e211f7a3529b8150a1f71e4225525b41b60b52965bda53ce7d47377ada1
@@ -14088,6 +14442,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-smooth@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "react-smooth@npm:4.0.0"
+  dependencies:
+    fast-equals: "npm:^5.0.1"
+    prop-types: "npm:^15.8.1"
+    react-transition-group: "npm:^4.4.5"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: b5d1028e46467adebb3d754d1f93f9d051e9f3c817a57f167c8fbb1a79579809bfc65a491a6578ed5165fa0845a36d28a46378a25894c76b78f37a9cfba8a7a1
+  languageName: node
+  linkType: hard
+
 "react-style-singleton@npm:^2.2.1":
   version: 2.2.1
   resolution: "react-style-singleton@npm:2.2.1"
@@ -14115,6 +14483,21 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: 33d38a6d96cf584842695b50c341980944ece23a42155bf0bd1958f02396adb185c7720b88678dc677817fe111783059c0ebcdf7761644006892583b10e258ee
+  languageName: node
+  linkType: hard
+
+"react-transition-group@npm:4.4.5, react-transition-group@npm:^4.4.5":
+  version: 4.4.5
+  resolution: "react-transition-group@npm:4.4.5"
+  dependencies:
+    "@babel/runtime": "npm:^7.5.5"
+    dom-helpers: "npm:^5.0.1"
+    loose-envify: "npm:^1.4.0"
+    prop-types: "npm:^15.6.2"
+  peerDependencies:
+    react: ">=16.6.0"
+    react-dom: ">=16.6.0"
+  checksum: 2ba754ba748faefa15f87c96dfa700d5525054a0141de8c75763aae6734af0740e77e11261a1e8f4ffc08fd9ab78510122e05c21c2d79066c38bb6861a886c82
   languageName: node
   linkType: hard
 
@@ -14243,6 +14626,34 @@ __metadata:
     source-map: "npm:~0.6.1"
     tslib: "npm:^2.0.1"
   checksum: d719633be8029e28f23b8191d4a525c5dbdac721792ab3cb5e9dfcf1694fb93f3c147b186916195a9c7fa0711f1e4990ba457cdcee02faed3899d4a80da1bd1f
+  languageName: node
+  linkType: hard
+
+"recharts-scale@npm:^0.4.4":
+  version: 0.4.5
+  resolution: "recharts-scale@npm:0.4.5"
+  dependencies:
+    decimal.js-light: "npm:^2.4.1"
+  checksum: 64ce1fc4ebe62001787bf4dc4cbb779452d33831619309c71c50277c58e8968ffe98941562d9d0d5ffdb02588ebd62f4fe6548fa826110fd458db9c3cc6dadc1
+  languageName: node
+  linkType: hard
+
+"recharts@npm:2":
+  version: 2.12.2
+  resolution: "recharts@npm:2.12.2"
+  dependencies:
+    clsx: "npm:^2.0.0"
+    eventemitter3: "npm:^4.0.1"
+    lodash: "npm:^4.17.21"
+    react-is: "npm:^16.10.2"
+    react-smooth: "npm:^4.0.0"
+    recharts-scale: "npm:^0.4.4"
+    tiny-invariant: "npm:^1.3.1"
+    victory-vendor: "npm:^36.6.8"
+  peerDependencies:
+    react: ^16.0.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
+  checksum: 68e416470301d2b0249c329d8f279fb460ae1be5f1c987c1f5be9152cc9b05435f0522d2bcf7bfe6ec73d83428c9e96f0e9262fe7feb61a5d7bfe22a28879bf8
   languageName: node
   linkType: hard
 
@@ -16443,6 +16854,28 @@ __metadata:
   version: 1.1.2
   resolution: "vary@npm:1.1.2"
   checksum: f15d588d79f3675135ba783c91a4083dcd290a2a5be9fcb6514220a1634e23df116847b1cc51f66bfb0644cf9353b2abb7815ae499bab06e46dd33c1a6bf1f4f
+  languageName: node
+  linkType: hard
+
+"victory-vendor@npm:^36.6.8":
+  version: 36.9.1
+  resolution: "victory-vendor@npm:36.9.1"
+  dependencies:
+    "@types/d3-array": "npm:^3.0.3"
+    "@types/d3-ease": "npm:^3.0.0"
+    "@types/d3-interpolate": "npm:^3.0.1"
+    "@types/d3-scale": "npm:^4.0.2"
+    "@types/d3-shape": "npm:^3.1.0"
+    "@types/d3-time": "npm:^3.0.0"
+    "@types/d3-timer": "npm:^3.0.0"
+    d3-array: "npm:^3.1.6"
+    d3-ease: "npm:^3.0.1"
+    d3-interpolate: "npm:^3.0.1"
+    d3-scale: "npm:^4.0.2"
+    d3-shape: "npm:^3.1.0"
+    d3-time: "npm:^3.0.0"
+    d3-timer: "npm:^3.0.1"
+  checksum: eb5e0252390ffb10275602386aaa72e53f260e394b75aa6c16200e7e3e0259a3be5135360cd62db4d1ecac85d8b65c9caaba8cd9be8087e748e1a447cad7974b
   languageName: node
   linkType: hard
 
