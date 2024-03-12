@@ -1,4 +1,7 @@
+import colors from "@/constants/color";
 import { CarouselData } from "@/types/Carousel";
+import { TabData } from "@/types/Tabs";
+import { FaCalendar, FaCalendarAlt, FaCalendarWeek, FaCalendarDay } from "react-icons/fa";
 
 export const dashboardCarouselData: CarouselData[] =  [
     {
@@ -38,4 +41,59 @@ export const dashboardCarouselData: CarouselData[] =  [
       category: 'nature',
     },
 ];
+
+export const dashboardItemTabsData: TabData[] = [
+    {
+        title: 'Annual',
+        icon: FaCalendar,
+        iconStyle: {color: colors.primary},
+        content: 'a',
+    },
+    {
+        title: 'Monthly',
+        icon: FaCalendarAlt,
+        iconStyle: {color: colors.primary},
+        content: 'b',
+    },
+    {
+        title: 'Weekly',
+        icon: FaCalendarWeek,
+        iconStyle: {color: colors.primary},
+        content: 'c',
+    },
+    {
+        title: 'Daily',
+        icon: FaCalendarDay,
+        iconStyle: {color: colors.primary},
+        content: '',
+    },
+]
+
+export const dashboardReviewTabsData: TabData[] = [
+    {
+        title: 'Annual',
+        icon: FaCalendar,
+        iconStyle: {color: colors.primary},
+        content: 'aa',
+    },
+    {
+        title: 'Monthly',
+        icon: FaCalendarAlt,
+        iconStyle: {color: colors.primary},
+        content: 'b',
+    },
+    {
+        title: 'Weekly',
+        icon: FaCalendarWeek,
+        iconStyle: {color: colors.primary},
+        content: 'c',
+    },
+    {
+        title: 'Daily',
+        icon: FaCalendarDay,
+        iconStyle: {color: colors.primary},
+        content: '',
+    },
+]
+
 
