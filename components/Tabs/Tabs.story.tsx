@@ -8,10 +8,10 @@ const meta: Meta<typeof Tabs> = {
   component: Tabs,
   argTypes: {
     tabData: {
-        title: {controle: 'text'},
-        icon: {controle: 'text'},
-        content: {controle: 'text'},
-    }
+      title: { controle: 'text' },
+      icon: { controle: 'text' },
+      content: { controle: 'text' },
+    },
   },
 };
 
@@ -23,22 +23,22 @@ type Story = StoryObj<typeof Tabs>;
 export const Default: Story = {
   args: {
     tabData: [
-        {
-            title: 'gallery',
-            icon: IconPhoto,
-            content: <p>Gallery tab content</p>,
-        },
-        {
-            title: 'message',
-            icon: IconMessage,
-            content: <p>Messages tab content</p>,
-        },
-        {
-            title: 'settings',
-            icon: IconSettings,
-            content: <p>Settings tab content</p>,
-        },
-    ]
+      {
+        title: 'gallery',
+        icon: IconPhoto,
+        content: <p>Gallery tab content</p>,
+      },
+      {
+        title: 'message',
+        icon: IconMessage,
+        content: <p>Messages tab content</p>,
+      },
+      {
+        title: 'settings',
+        icon: IconSettings,
+        content: <p>Settings tab content</p>,
+      },
+    ],
   },
   render: (args) => <Tabs {...args} />,
 };

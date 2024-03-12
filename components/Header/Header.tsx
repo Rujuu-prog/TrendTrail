@@ -3,6 +3,8 @@
 import { Group, Burger, Button, Text } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconHistory, IconShoppingCart } from '@tabler/icons-react';
+import { useSession } from 'next-auth/react';
+import Link from 'next/link';
 import { signOutServerAction } from '@/app/lib/actions';
 import classes from './Header.module.css';
 import { SearchInput } from '../Input/SearchInput/SearchInput';
@@ -10,8 +12,6 @@ import { CartButton } from '../Button/CartButton/CartButton';
 import { AvatarButton } from '../Button/AvatarButton/AvatarButton';
 import { Menu } from '../Menu/Menu';
 import { DropdownMenuItems } from '../Menu/MenuItems/DropdownMenuItems';
-import { useSession } from 'next-auth/react';
-import Link from 'next/link';
 import { pacifico } from '@/app/lib/font';
 
 export function Header() {
@@ -37,7 +37,6 @@ export function Header() {
   // ログイン情報取得
   const session = useSession();
   const user = session.data?.user;
-  console.log(session.data);
 
   return (
     <header className={classes.header}>
@@ -71,11 +70,14 @@ export function Header() {
                 menuProps={{ position: 'bottom-end' }}
               />
             ) : (
-              <Link href="/signIn">
-                <Button variant="gradient" gradient={{ from: 'violet', to: 'indigo', deg: 120 }}>
-                  Sign in
-                </Button>
-              </Link>
+              <Button
+                component={Link}
+                href="/signIn"
+                variant="gradient"
+                gradient={{ from: 'violet', to: 'indigo', deg: 120 }}
+              >
+                Sign in
+              </Button>
             )}
           </Group>
         </Group>
