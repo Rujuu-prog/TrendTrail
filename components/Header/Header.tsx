@@ -45,7 +45,7 @@ export function Header() {
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
           <div className={classes.icon}>
             <Text
-              className={`${pacifico.className} antialiased`}
+              className={`${pacifico.className} ${classes.title} antialiased`}
               size="30"
               fw={700}
               variant="gradient"
