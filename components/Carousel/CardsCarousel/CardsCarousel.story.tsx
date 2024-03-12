@@ -7,13 +7,6 @@ import '@mantine/carousel/styles.css';
 const meta: Meta<typeof CardsCarousel> = {
   title: 'C/CardsCarousel',
   component: CardsCarousel,
-  argTypes: {
-    data: {
-      image: { control: 'text' },
-      title: { control: 'text' },
-      category: { control: 'text' },
-    }
-  },
 };
 
 export default meta;
@@ -23,7 +16,8 @@ type Story = StoryObj<typeof CardsCarousel>;
 
 export const Default: Story = {
   args: {
-      data:[ {
+    data: [
+      {
         image:
           'https://images.unsplash.com/photo-1508193638397-1c4234db14d8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
         title: 'Best forests to visit in North America',
@@ -58,7 +52,8 @@ export const Default: Story = {
           'https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
         title: 'Active volcanos reviews: travel at your own risk',
         category: 'nature',
-      }],
+      }
+    ]
   },
   render: (args) => <CardsCarousel {...args} />,
 };
