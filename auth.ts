@@ -1,11 +1,9 @@
 import NextAuth from 'next-auth';
 import { PrismaAdapter } from '@auth/prisma-adapter';
-import Credentials from 'next-auth/providers/credentials';
-import { z } from 'zod';
-import bcrypt from 'bcrypt';
-import { authConfig } from './auth.config';
-import prisma from './app/lib/prisma';
-import { getUserByEmail } from './db/user';
+import prisma from '@/app/lib/prisma';
+
+import { authConfig } from '@/auth.config';
+import { getUserByEmail, getUserById } from '@/db/user';
 
 export const {
   handlers: { GET, POST },
@@ -13,26 +11,30 @@ export const {
   signIn,
   signOut,
 } = NextAuth({
-  adapter: PrismaAdapter(prisma),
-  session: { strategy: 'jwt' },
-  ...authConfig,
-  providers: [
-    Credentials({
-      async authorize(credentials) {
-        const parsedCredentials = z
-          .object({ email: z.string().email(), password: z.string().min(2) })
-          .safeParse(credentials);
+  basePath: '/api/auth',
+  callbacks: {
+    authorized({ request, auth }) {
+      console.log('Please Remove Me. This is a POC', auth);
+      return true;
+    },
+    async jwt({ token }) {
+      if (token.sub) {
+        const user = await getUserById(token.sub);
+        console.log(user); // ok
+        if (user) token.role = user.role;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (token.sub && session.user) {
+        session.user.id = token.sub;
+        session.user.role = token.role;
+      }
 
-        if (parsedCredentials.success) {
-          const { email, password } = parsedCredentials.data;
-          const user = await getUserByEmail(email);
-          if (!user) return null;
-          const passwordsMatch = await bcrypt.compare(password, user.hashedpassword);
-          if (passwordsMatch) return user;
-        }
-        console.log('Invalid credentials');
-        return null;
-      },
-    }),
-  ],
+      return session;
+    },
+  },
+
+  adapter: PrismaAdapter(prisma),
+  ...authConfig,
 });
