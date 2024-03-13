@@ -40,7 +40,6 @@ export function Header() {
 
   return (
     <header className={classes.header}>
-      {/* <p>{status}</p> */}
       <div className={classes.inner}>
         <Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
