@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import { Tabs } from './Tabs';
 import { IconMessage, IconPhoto, IconSettings } from '@tabler/icons-react';
+import { Tabs } from './Tabs';
 
 const meta: Meta<typeof Tabs> = {
   title: 'Tabs',

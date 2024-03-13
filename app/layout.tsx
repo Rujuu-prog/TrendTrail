@@ -1,9 +1,8 @@
 import '@mantine/core/styles.css';
 import React from 'react';
 import { MantineProvider, ColorSchemeScript } from '@mantine/core';
-import { theme } from '../theme';
-import { Header } from '@/components/Header/Header';
 import { SessionProvider } from 'next-auth/react';
+import { theme } from '../theme';
 import { auth } from '@/auth';
 import '@mantine/carousel/styles.css';
 
@@ -26,9 +25,7 @@ export default async function RootLayout({ children }: { children: any }) {
           />
         </head>
         <body>
-          <MantineProvider theme={theme}>
-            {children}
-          </MantineProvider>
+          <MantineProvider theme={theme}>{children}</MantineProvider>
         </body>
       </html>
     </SessionProvider>

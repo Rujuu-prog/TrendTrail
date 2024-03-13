@@ -7,7 +7,7 @@ interface MenuItem {
   shortcut?: string;
   label?: string;
   divider?: boolean;
-  formAction?: ()=>void;
+  formAction?: () => void;
 }
 
 interface DropdownMenuItemsProps {
@@ -29,11 +29,13 @@ export function DropdownMenuItems({ items }: DropdownMenuItemsProps) {
             key={index}
             color={item.color}
             leftSection={item.icon && <item.icon style={{ width: rem(14), height: rem(14) }} />}
-            rightSection={item.shortcut && (
-              <Text size="xs" color="dimmed">
-                {item.shortcut}
-              </Text>
-            )}
+            rightSection={
+              item.shortcut && (
+                <Text size="xs" color="dimmed">
+                  {item.shortcut}
+                </Text>
+              )
+            }
             onClick={item.formAction}
           >
             {item.text}

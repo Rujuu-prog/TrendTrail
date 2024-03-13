@@ -52,8 +52,8 @@ export const Default: Story = {
           'https://images.unsplash.com/photo-1582721478779-0ae163c05a60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80',
         title: 'Active volcanos reviews: travel at your own risk',
         category: 'nature',
-      }
-    ]
+      },
+    ],
   },
   render: (args) => <CardsCarousel {...args} />,
 };

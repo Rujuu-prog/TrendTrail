@@ -1,9 +1,8 @@
 'use server';
 
-import { signIn } from '@/auth';
-import { signOut } from '@/auth';
-import { createUser } from '@/db/user';
 import { AuthError } from 'next-auth';
+import { signIn, signOut } from '@/auth';
+import { createUser } from '@/db/user';
 import { DEFAULT_LOGIN_REDIRECT } from '@/route';
 
 export async function authenticate(prevState: string | undefined, formData: FormData) {

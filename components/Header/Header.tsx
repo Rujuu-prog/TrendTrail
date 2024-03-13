@@ -35,11 +35,12 @@ export function Header() {
   ];
 
   // ログイン情報取得
-  const session = useSession();
-  const user = session.data?.user;
+  const { data: session, status } = useSession();
+  const user = session?.user;
 
   return (
     <header className={classes.header}>
+      {/* <p>{status}</p> */}
       <div className={classes.inner}>
         <Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
@@ -63,22 +64,23 @@ export function Header() {
         <Group>
           <Group ml={50} gap={5} className={classes.links} visibleFrom="sm">
             <CartButton />
-            {session.status === 'authenticated' && user ? (
-              <Menu
-                button={<AvatarButton name={user.name?.toString()} />}
-                menuItems={<DropdownMenuItems items={menuItems} />}
-                menuProps={{ position: 'bottom-end' }}
-              />
-            ) : (
-              <Button
-                component={Link}
-                href="/signIn"
-                variant="gradient"
-                gradient={{ from: 'violet', to: 'indigo', deg: 120 }}
-              >
-                Sign in
-              </Button>
-            )}
+            {status !== 'loading' &&
+              (status === 'authenticated' && user ? (
+                <Menu
+                  button={<AvatarButton name={user.name?.toString()} />}
+                  menuItems={<DropdownMenuItems items={menuItems} />}
+                  menuProps={{ position: 'bottom-end' }}
+                />
+              ) : (
+                <Button
+                  component={Link}
+                  href="/signIn"
+                  variant="gradient"
+                  gradient={{ from: 'violet', to: 'indigo', deg: 120 }}
+                >
+                  Sign in
+                </Button>
+              ))}
           </Group>
         </Group>
       </div>
