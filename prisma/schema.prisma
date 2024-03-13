@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -15,6 +9,7 @@ datasource db {
   shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
+// User系
 model Account {
   id                String  @id @default(cuid())
   userId            String
@@ -43,14 +38,33 @@ model Session {
 }
 
 model User {
-  id             String    @id @default(cuid())
-  name           String
-  email          String    @unique
-  emailVerified  DateTime?
-  hashedpassword String
-  image          String?
-  accounts       Account[]
-  sessions       Session[]
+  id              String            @id @default(cuid())
+  name            String
+  email           String            @unique
+  emailVerified   DateTime?
+  hashedpassword  String
+  image           String?
+  accounts        Account[]
+  sessions        Session[]
+  deliveryAddress DeliveryAddress[]
+  items           Item[]
+  likes           Like[]
+  cart            Cart?
+  updatedAt       DateTime          @updatedAt
+  role            Role              @default(CUSTOMER)
+}
+
+model DeliveryAddress {
+  id          String @id @default(cuid())
+  userId      String
+  address     String
+  city        String
+  state       String
+  postalCode  String
+  country     String
+  phoneNumber String
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {
@@ -59,4 +73,158 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+enum Role {
+  CUSTOMER
+  SALES
+  ADMIN
+}
+
+// Item系
+model Item {
+  id                  String       @id @default(cuid())
+  userId              String
+  name                String
+  description         String?
+  price               Float
+  uom                 Uom          @default(USD)
+  primaryCategoryId   String
+  secondaryCategoryId String?
+  images              ItemImage[]
+  orderItems          OrderItems[]
+  inventory           Inventory[]
+  cartItems           CartItems[]
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+
+  user             User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  primaryCategory  Category  @relation("primaryCategory", fields: [primaryCategoryId], references: [id], onDelete: Cascade)
+  secondayCategory Category? @relation("secondaryCategory", fields: [secondaryCategoryId], references: [id], onDelete: SetNull)
+}
+
+enum Uom {
+  USD
+  JYP
+}
+
+model Category {
+  id             String   @id @default(cuid())
+  name           String
+  primaryItems   Item[]   @relation("primaryCategory")
+  secondaryItems Item[]   @relation("secondaryCategory")
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model ItemImage {
+  id          String   @id @default(cuid())
+  itemId      String
+  url         String
+  description String?
+  order       Int
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
+}
+
+// Order系
+model Order {
+  id                String       @id @default(cuid())
+  userId            String
+  deliveryAddressId String
+  status            OrderStatus  @default(PENDING)
+  totalPrice        Float
+  orderItems        OrderItems[]
+  createdAt         DateTime     @default(now()) // 注文日
+  updatedAt         DateTime     @updatedAt
+}
+
+enum OrderStatus {
+  PENDING // 注文が作成され、支払い待ち
+  CONFIRMED // 支払いが確認され、注文が確定
+  PREPARING // 注文が準備中（商品のピッキングや梱包など）
+  SHIPPED // 注文が出荷され、配送中
+  DELIVERED // 注文が配達され、完了
+  CANCELLED // 注文がキャンセルされた
+  RETURNED // 注文が返品された
+}
+
+model OrderItems {
+  id            String   @id @default(cuid())
+  orderId       String
+  itemId        String
+  quantity      Int
+  purchasePrice Float // 購入時価格
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  item  Item  @relation(fields: [itemId], references: [id], onDelete: Cascade)
+}
+
+model Inventory {
+  id        String   @id @default(cuid())
+  itemId    String
+  quantity  String //在庫数
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
+}
+
+// Review系
+model Review {
+  id        String     @id @default(cuid())
+  userId    String
+  itemId    String
+  title     String
+  content   String
+  rate      ReviewRate
+  likes     Like[]
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+}
+
+enum ReviewRate {
+  ONE
+  TWO
+  THREE
+  FOUR
+  FIVE
+}
+
+model Like {
+  id        String   @id @default(cuid())
+  userId    String
+  reviewId  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  review Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+}
+
+// Cart系
+model Cart {
+  id        String      @id @default(cuid())
+  userId    String      @unique
+  cartItems CartItems[]
+  updatedAt DateTime    @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model CartItems {
+  id        String   @id @default(cuid())
+  cartId    String
+  itemId    String
+  quantity  Int
+  price     Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  cart Cart @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  item Item @relation(fields: [itemId], references: [id], onDelete: Cascade)
 }
