@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 8
+  version: 6
   cacheKey: 10c0
 
 "@aashutoshrathi/word-wrap@npm:^1.2.3":
@@ -55,14 +55,40 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@auth/prisma-adapter@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "@auth/prisma-adapter@npm:1.5.0"
+"@auth/core@npm:0.36.0":
+  version: 0.36.0
+  resolution: "@auth/core@npm:0.36.0"
   dependencies:
-    "@auth/core": "npm:0.28.0"
+    "@panva/hkdf": ^1.2.1
+    "@types/cookie": 0.6.0
+    cookie: 0.7.1
+    jose: ^5.9.3
+    oauth4webapi: ^2.17.0
+    preact: 10.11.3
+    preact-render-to-string: 5.2.3
+  peerDependencies:
+    "@simplewebauthn/browser": ^9.0.1
+    "@simplewebauthn/server": ^9.0.2
+    nodemailer: ^6.8.0
+  peerDependenciesMeta:
+    "@simplewebauthn/browser":
+      optional: true
+    "@simplewebauthn/server":
+      optional: true
+    nodemailer:
+      optional: true
+  checksum: 8/96d8767a02f2e993f3d146e22d53325f72d7e80744e73ba40f622f34381d4ba6b28b813fb86e7b0f022a9292d102179056e48addf5eae391d1b0dff265320290
+  languageName: node
+  linkType: hard
+
+"@auth/prisma-adapter@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "@auth/prisma-adapter@npm:2.6.0"
+  dependencies:
+    "@auth/core": 0.36.0
   peerDependencies:
     "@prisma/client": ">=2.26.0 || >=3 || >=4 || >=5"
-  checksum: 9b49833fd3555ebc6bb5d031f2c422aa4c544753ac8b906101d5327875850ed6e1a6b82dec96740df349a74315154e799e4b18d04b6567d051bd309a2fe4f483
+  checksum: 8/70a207234df0b0d76965ad6f1a7820fb4edc9aad8fa94096cc8d5ab7f2d8d54fdf57b723c49540b88441c19dc66e7abd747ae2619c3f52be2b27e8fa2acf4e62
   languageName: node
   linkType: hard
 
@@ -2709,6 +2735,13 @@ __metadata:
   version: 1.1.1
   resolution: "@panva/hkdf@npm:1.1.1"
   checksum: 34f98068a33c031ba112cdfa0c8e29b28336e173a4f93532a24b3196c9f25b2cbd1477cf54a30293f760f909369a725fb645dabb9ed132aec7dedde263a2263e
+  languageName: node
+  linkType: hard
+
+"@panva/hkdf@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@panva/hkdf@npm:1.2.1"
+  checksum: 8/a4a9d1812f88f02bc163b365524bbaa5239cc4711e5e7be1bda68dabae1c896cf1cd12520949b0925a6910733d1afcb25ab51fd3cf06f0f69aee988fffebf56e
   languageName: node
   linkType: hard
 
@@ -7684,6 +7717,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cookie@npm:0.7.1":
+  version: 0.7.1
+  resolution: "cookie@npm:0.7.1"
+  checksum: 8/cec5e425549b3650eb5c3498a9ba3cde0b9cd419e3b36e4b92739d30b4d89e0b678b98c1ddc209ce7cf958cd3215671fd6ac47aec21f10c2a0cc68abd399d8a7
+  languageName: node
+  linkType: hard
+
 "core-js-compat@npm:^3.31.0, core-js-compat@npm:^3.32.2":
   version: 3.32.2
   resolution: "core-js-compat@npm:3.32.2"
@@ -9894,9 +9934,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fsevents@patch:fsevents@npm%3A^2.3.2#optional!builtin<compat/fsevents>, fsevents@patch:fsevents@npm%3A~2.3.2#optional!builtin<compat/fsevents>":
+"fsevents@patch:fsevents@npm%3A^2.3.2#~builtin<compat/fsevents>, fsevents@patch:fsevents@npm%3A~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.3
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.3#optional!builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.3#~builtin<compat/fsevents>::version=2.3.3&hash=df0bf1"
   dependencies:
     node-gyp: "npm:latest"
   conditions: os=darwin
@@ -11735,6 +11775,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jose@npm:^5.9.3":
+  version: 5.9.3
+  resolution: "jose@npm:5.9.3"
+  checksum: 8/d128f2b90daf76f14eb22a81528e4f1cd99aa73613ae9d7edad69479c0ae9c29d571108e21d6ac33c3892de7bea24c4a4b99b4eb63354ebe566683c719ee334e
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -12249,72 +12296,72 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "mantine-next-template@workspace:."
   dependencies:
-    "@auth/prisma-adapter": "npm:^1.5.0"
-    "@babel/core": "npm:^7.23.2"
-    "@mantine/carousel": "npm:^7.6.1"
-    "@mantine/charts": "npm:^7.6.1"
-    "@mantine/core": "npm:^7.6.1"
-    "@mantine/dropzone": "npm:^7.6.1"
-    "@mantine/form": "npm:^7.6.1"
-    "@mantine/hooks": "npm:^7.6.1"
-    "@mantine/modals": "npm:^7.6.1"
-    "@mantine/notifications": "npm:^7.6.1"
-    "@mantinex/mantine-logo": "npm:^1.0.1"
-    "@next/bundle-analyzer": "npm:^14.0.1"
-    "@next/eslint-plugin-next": "npm:^14.0.1"
-    "@prisma/client": "npm:^5.10.2"
-    "@storybook/addon-controls": "npm:^7.6.17"
-    "@storybook/addon-essentials": "npm:^7.5.2"
-    "@storybook/addon-styling-webpack": "npm:^0.0.5"
-    "@storybook/blocks": "npm:^7.5.2"
-    "@storybook/nextjs": "npm:^7.5.2"
-    "@storybook/react": "npm:^7.5.2"
-    "@tabler/icons-react": "npm:^2.40.0"
-    "@testing-library/dom": "npm:^9.3.3"
-    "@testing-library/jest-dom": "npm:^6.1.4"
-    "@testing-library/react": "npm:^14.0.0"
-    "@testing-library/user-event": "npm:^14.5.1"
-    "@types/bcrypt": "npm:^5"
-    "@types/jest": "npm:^29.5.7"
-    "@types/node": "npm:^20.8.10"
-    "@types/react": "npm:18.2.34"
-    "@types/react-dom": "npm:^18.2.21"
-    "@typescript-eslint/eslint-plugin": "npm:^6.9.1"
-    "@typescript-eslint/parser": "npm:^6.9.1"
-    "@vercel/postgres": "npm:^0.7.2"
-    babel-loader: "npm:^9.1.3"
-    bcrypt: "npm:^5.1.1"
-    embla-carousel-react: "npm:^8.0.0"
-    eslint: "npm:^8.53.0"
-    eslint-config-airbnb: "npm:19.0.4"
-    eslint-config-airbnb-typescript: "npm:^17.1.0"
-    eslint-config-mantine: "npm:3.0.0"
-    eslint-plugin-import: "npm:^2.29.0"
-    eslint-plugin-jest: "npm:^27.6.0"
-    eslint-plugin-jsx-a11y: "npm:^6.8.0"
-    eslint-plugin-react: "npm:^7.33.2"
-    eslint-plugin-react-hooks: "npm:^4.6.0"
-    eslint-plugin-testing-library: "npm:^6.1.0"
-    jest: "npm:^29.7.0"
-    jest-environment-jsdom: "npm:^29.7.0"
-    next: "npm:14.0.1"
-    next-auth: "npm:^5.0.0-beta.15"
-    postcss: "npm:^8.4.31"
-    postcss-preset-mantine: "npm:1.13.0"
-    postcss-simple-vars: "npm:^7.0.1"
-    prettier: "npm:^3.0.3"
-    prisma: "npm:^5.10.2"
-    react: "npm:18.2.0"
-    react-dom: "npm:^18.2.0"
-    react-icons: "npm:^5.0.1"
-    recharts: "npm:2"
-    storybook: "npm:^7.5.2"
-    storybook-dark-mode: "npm:^3.0.1"
-    stylelint: "npm:^15.11.0"
-    stylelint-config-standard-scss: "npm:^11.1.0"
-    ts-jest: "npm:^29.1.1"
-    typescript: "npm:5.2.2"
-    zod: "npm:^3.22.4"
+    "@auth/prisma-adapter": ^2.6.0
+    "@babel/core": ^7.23.2
+    "@mantine/carousel": ^7.6.1
+    "@mantine/charts": ^7.6.1
+    "@mantine/core": ^7.6.1
+    "@mantine/dropzone": ^7.6.1
+    "@mantine/form": ^7.6.1
+    "@mantine/hooks": ^7.6.1
+    "@mantine/modals": ^7.6.1
+    "@mantine/notifications": ^7.6.1
+    "@mantinex/mantine-logo": ^1.0.1
+    "@next/bundle-analyzer": ^14.0.1
+    "@next/eslint-plugin-next": ^14.0.1
+    "@prisma/client": ^5.10.2
+    "@storybook/addon-controls": ^7.6.17
+    "@storybook/addon-essentials": ^7.5.2
+    "@storybook/addon-styling-webpack": ^0.0.5
+    "@storybook/blocks": ^7.5.2
+    "@storybook/nextjs": ^7.5.2
+    "@storybook/react": ^7.5.2
+    "@tabler/icons-react": ^2.40.0
+    "@testing-library/dom": ^9.3.3
+    "@testing-library/jest-dom": ^6.1.4
+    "@testing-library/react": ^14.0.0
+    "@testing-library/user-event": ^14.5.1
+    "@types/bcrypt": ^5
+    "@types/jest": ^29.5.7
+    "@types/node": ^20.8.10
+    "@types/react": 18.2.34
+    "@types/react-dom": ^18.2.21
+    "@typescript-eslint/eslint-plugin": ^6.9.1
+    "@typescript-eslint/parser": ^6.9.1
+    "@vercel/postgres": ^0.7.2
+    babel-loader: ^9.1.3
+    bcrypt: ^5.1.1
+    embla-carousel-react: ^8.0.0
+    eslint: ^8.53.0
+    eslint-config-airbnb: 19.0.4
+    eslint-config-airbnb-typescript: ^17.1.0
+    eslint-config-mantine: 3.0.0
+    eslint-plugin-import: ^2.29.0
+    eslint-plugin-jest: ^27.6.0
+    eslint-plugin-jsx-a11y: ^6.8.0
+    eslint-plugin-react: ^7.33.2
+    eslint-plugin-react-hooks: ^4.6.0
+    eslint-plugin-testing-library: ^6.1.0
+    jest: ^29.7.0
+    jest-environment-jsdom: ^29.7.0
+    next: 14.0.1
+    next-auth: ^5.0.0-beta.15
+    postcss: ^8.4.31
+    postcss-preset-mantine: 1.13.0
+    postcss-simple-vars: ^7.0.1
+    prettier: ^3.0.3
+    prisma: ^5.10.2
+    react: 18.2.0
+    react-dom: ^18.2.0
+    react-icons: ^5.0.1
+    recharts: 2
+    storybook: ^7.5.2
+    storybook-dark-mode: ^3.0.1
+    stylelint: ^15.11.0
+    stylelint-config-standard-scss: ^11.1.0
+    ts-jest: ^29.1.1
+    typescript: 5.2.2
+    zod: ^3.22.4
   languageName: unknown
   linkType: soft
 
@@ -13074,6 +13121,13 @@ __metadata:
   version: 2.2.7
   resolution: "nwsapi@npm:2.2.7"
   checksum: 44be198adae99208487a1c886c0a3712264f7bbafa44368ad96c003512fed2753d4e22890ca1e6edb2690c3456a169f2a3c33bfacde1905cf3bf01c7722464db
+  languageName: node
+  linkType: hard
+
+"oauth4webapi@npm:^2.17.0":
+  version: 2.17.0
+  resolution: "oauth4webapi@npm:2.17.0"
+  checksum: 8/2a29c1d4c2f597aa8e41f51bc102cf098c23295a05b0ab4769f53800b6ede7abae3f8b00136634e1ec32bea7849cbefdd9e0f21ec7c215f45fa6d9e82cb6701c
   languageName: node
   linkType: hard
 
@@ -14900,29 +14954,29 @@ __metadata:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@npm%3A^1.10.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#optional!builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.4#optional!builtin<compat/resolve>":
+"resolve@patch:resolve@npm%3A^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.20.0#~builtin<compat/resolve>, resolve@patch:resolve@npm%3A^1.22.4#~builtin<compat/resolve>":
   version: 1.22.6
-  resolution: "resolve@patch:resolve@npm%3A1.22.6#optional!builtin<compat/resolve>::version=1.22.6&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.22.6#~builtin<compat/resolve>::version=1.22.6&hash=c3c19d"
   dependencies:
     is-core-module: "npm:^2.13.0"
     path-parse: "npm:^1.0.7"
     supports-preserve-symlinks-flag: "npm:^1.0.0"
   bin:
     resolve: bin/resolve
-  checksum: acedc45a638b3635730669bb65e87bb61f5bf9b4e81982aba9ece0049ff792472a6fbb0c22cc59073cdbf17a0926c1d3d77ba86c88c60e15cc46f929278210cb
+  checksum: 8/9d3b3c67aefd12cecbe5f10ca4d1f51ea190891096497c43f301b086883b426466918c3a64f1bbf1788fabb52b579d58809614006c5d0b49186702b3b8fb746a
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@npm%3A^2.0.0-next.4#optional!builtin<compat/resolve>":
+"resolve@patch:resolve@npm%3A^2.0.0-next.4#~builtin<compat/resolve>":
   version: 2.0.0-next.4
-  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#optional!builtin<compat/resolve>::version=2.0.0-next.4&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A2.0.0-next.4#~builtin<compat/resolve>::version=2.0.0-next.4&hash=c3c19d"
   dependencies:
     is-core-module: "npm:^2.9.0"
     path-parse: "npm:^1.0.7"
     supports-preserve-symlinks-flag: "npm:^1.0.0"
   bin:
     resolve: bin/resolve
-  checksum: ed2bb51d616b9cd30fe85cf49f7a2240094d9fa01a221d361918462be81f683d1855b7f192391d2ab5325245b42464ca59690db5bd5dad0a326fc0de5974dd10
+  checksum: 8/4bf9f4f8a458607af90518ff73c67a4bc1a38b5a23fef2bb0ccbd45e8be89820a1639b637b0ba377eb2be9eedfb1739a84cde24fe4cd670c8207d8fea922b011
   languageName: node
   linkType: hard
 
@@ -16491,13 +16545,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@5.2.2#~builtin<compat/typescript>":
   version: 5.2.2
-  resolution: "typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"
+  resolution: "typescript@patch:typescript@npm%3A5.2.2#~builtin<compat/typescript>::version=5.2.2&hash=d73830"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 062c1cee1990e6b9419ce8a55162b8dc917eb87f807e4de0327dbc1c2fa4e5f61bc0dd4e034d38ff541d1ed0479b53bcee8e4de3a4075c51a1724eb6216cb6f5
+  checksum: 8/07106822b4305de3f22835cbba949a2b35451cad50888759b6818421290ff95d522b38ef7919e70fb381c5fe9c1c643d7dea22c8b31652a717ddbd57b7f4d554
   languageName: node
   linkType: hard
 
