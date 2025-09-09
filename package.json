@@ -35,7 +35,7 @@
     "@vercel/postgres": "^0.7.2",
     "bcrypt": "^5.1.1",
     "embla-carousel-react": "^8.0.0",
-    "next": "14.0.1",
+    "next": "14.2.32",
     "next-auth": "^5.0.0-beta.15",
     "react": "18.2.0",
     "react-dom": "^18.2.0",
